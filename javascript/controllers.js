@@ -7,7 +7,7 @@ app.controller('MainCtrl', function($scope) {
 
     $scope.type = "none"; 
 
-    $scope.typeArray = ['Area', 'Computer Storage', 'Energy', 'Length', 'Weight', 'Speed', 'Temperature', 'Time', 'Volume'];
+    $scope.typeArray = ['Area', 'Computer Storage', 'Energy', 'Length', 'Speed', 'Temperature', 'Time', 'Volume', 'Weight'];
 
     $scope.areaArray = ['Square Mile', 'Square Yard', 'Square Foot', 'Square Inch', 'Hectarea', 'Acre', 'Square Kilometer', 'Square Meter', 'Square Centimeter', 'Square Millimeter'];
 
