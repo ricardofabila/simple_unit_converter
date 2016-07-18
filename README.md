@@ -12,9 +12,7 @@ Finding a simple unit converter that just works shouldn't be that that hard. Tha
 
 ## Usage
 
-You can convert just about anything but the kitchen sink.
-
-Easily convert:
+You can convert just about anything but the kitchen sink. Easily convert:
 
 | Area              | Energy            | Computer Storage |
 | ----------------- | ----------------- | ---------------- |
@@ -65,7 +63,7 @@ Easily convert:
 
 ## Completly Open Source
 
-this project is open source, so if you need even more units, you can easily add them. Just clone the repo and start coding!
+This project is open source, so if you need even more units, you can easily add them. Just clone the repo and start coding!
 
 You can reach me at [_Ricardo Fabila_](https://twitter.com/Ricardo_Fabila "Ricardo Fabila’s Twitter") on twitter.
 
