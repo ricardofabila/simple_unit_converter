@@ -1,0 +1,62 @@
+.main {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fixedSize{
+    max-height: 250px;
+    max-width: 400px;
+    min-width: 250px;
+    min-height: 400px;
+}
+
+.images{
+    max-height: 180px;
+    min-width: 180px;
+    min-height: 180px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.balance{
+    max-height: 185px;
+    min-width: 290px;
+    min-height: 185px;
+    max-width: 290px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.separator {
+    margin: 20px;
+}
+
+#copy_button{
+    cursor: copy;
+}
+
+
+#copy_button:hover{
+    background-color:rgba(0,0,0,0.1);
+}
+
+#over {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+.Centerer {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.Centered {
+    display: inline-block;
+    vertical-align: middle;
+}

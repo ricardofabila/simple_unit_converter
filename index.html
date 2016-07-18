@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    
+    <head>
+        <title>Simple Unit Converter</title>
+        <meta name="Description" content="Simple Unit Converter - A simple, right-to-the-point, easy-to-use online unit converter.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <!-- JS & CSS-->
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./bower_components/clipboard/dist/clipboard.min.js"></script>
+        <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+        <script src="javascript/converter.js"></script>
+        <script src="javascript/controllers.js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body ng-app="app">
+        <main class="main fixedSize">
+        <div>
+            <form name="form" ng-controller="MainCtrl" novalidate>
+                
+                <!-- Images-->
+                
+                <ng-switch on="type">
+                    <div ng-switch-when="none">
+                        <div id="over">
+                            <span class="Centerer"></span><img class="Centered images balance" ng-src="images/Balance.svg" alt="Simple Unit Converter"/>
+                        </div>
+                    </div>
+                    <div ng-switch-default>
+                        <div id="over">
+                            <span class="Centerer"></span><img class="Centered images" ng-src="images/{{type}}.png" alt="{{type}}"/>
+                        </div>
+                    </div>
+                </ng-switch>
+                
+                
+                <!--
+                <div id="over">
+                    <span class="Centerer"></span><img class="Centered images" ng-src="images/{{type}}.png" alt="{{type}}"/>
+                </div>
+                -->
+                <!-- /Images-->
+                
+                <!-- break line to separate elements using bootstrap-->
+                <div class="clearfix separator" style="margin: 20px"></div>
+                
+                <!-- Type select combo box-->
+                <div class="col-xs-12">
+                    <select class="form-control input-lg" ng-model="type" ng-options="item for item in typeArray">
+                        <option style="display:none" value="">select an unit type</option>
+                    </select>
+                </div>
+                <!-- /Type select combo box-->
+                <!-- break line to separate elements using bootstrap-->
+                <div class="clearfix separator" style="margin: 20px"></div>
+                
+                <!-- input unit select combo box-->
+                <div class="col-xs-6">
+                    <ng-switch on="type">
+                    <div ng-switch-when="Area">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in areaArray" ng-change="convert(type, from, to, input_unit)" >
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Computer Storage">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in computerStorageArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Energy">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in energyArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Length">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in lengthArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Weight">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in weightArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Speed">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in speedArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Temperature">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in temperatureArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Time">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in timeArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Volume">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in volumeArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                            <option ng-repeat="item in volumeArray">{{item}}</option>
+                        </select>
+                    </div>
+                    <div ng-switch-default>
+                        <select class="form-control input-lg" ng-model="$parent.from">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    </ng-switch>
+                </div>
+                <!-- /input unit select combo box-->
+                <!-- output unit select combo box-->
+                <div class="col-xs-6">
+                    <ng-switch on="type">
+                    <div ng-switch-when="Area">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in areaArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Computer Storage">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in computerStorageArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Energy">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in energyArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Length">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in lengthArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Weight">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in weightArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Speed">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in speedArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Temperature">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in temperatureArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Time">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in timeArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    <div ng-switch-when="Volume">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in volumeArray" ng-change="convert(type, from, to, input_unit)">
+                            <option style="display:none" value="">select unit</option>
+                            <option ng-repeat="item in volumeArray">{{item}}</option>
+                        </select>
+                    </div>
+                    <div ng-switch-default>
+                        <select class="form-control input-lg" ng-model="$parent.to">
+                            <option style="display:none" value="">select unit</option>
+                        </select>
+                    </div>
+                    </ng-switch>
+                </div>
+                <!-- output unit select combo box-->
+                
+                <!-- break line to separate elements using bootstrap-->
+                <div class="clearfix separator" style="margin: 10px"></div>
+                
+                <!-- Text input -->
+                <div class="col-xs-6" >
+                    <input class="form-control" type="text" ng-model="input_unit" placeholder="0" valid-number required="true" autofocus>
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="0" ng-model="output_unit" readonly id="result">
+                        <span class="input-group-addon" id="copy_button" data-clipboard-target="#result">
+                            <img src="images/copy.svg" alt="Copy to clipboard" width="16">
+                        </span>
+                    </div>
+                </div>
+                <!-- /Text input -->
+                <!-- break line to separate elements using bootstrap-->
+                <div class="clearfix separator" style="margin: 15px"></div>
+                
+                <!-- Field required warning -->
+                <p ng-show="input_unit.$invalid && input_unit.$touched" style="text-align: center; color: #ED4337;" name="warning" ng-model="warning">Please enter a number.</p>
+                <!-- /Field required warning -->
+                
+                <!-- Buttons -->
+                <div class="col-xs-8" style="left:15%">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="convert(type, from, to, input_unit)">Convert</button>
+                    <button type="button" class="btn btn-danger btn-lg btn-block" ng-click="invert(type, from, to, input_unit)">Invert</button>
+                </div>
+                <!-- /Buttons -->
+            </form>
+            
+            <!-- break line to separate elements using bootstrap-->
+            <div class="clearfix separator" style="margin: 10px"></div>
+        </div>
+        
+        <p style="text-align: center; color: #bfbcbc;">Made with &hearts; by Ricardo Fabila</p>
+        </main>
+        
+        <script>
+        var btn = document.getElementById('copy_button');
+        var clipboard = new Clipboard(btn);
+        
+        clipboard.on('success', function(e) {
+        //console.log(e);
+        });
+        
+        clipboard.on('error', function(e) {
+        console.log(e);
+        console.log("It seams the copy to clipboard funciton is not working correctly.");
+        });
+        </script>
+    </body>
+</html>
