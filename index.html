@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    
+
     <head>
         <title>Simple Unit Converter</title>
         <meta name="Description" content="Simple Unit Converter - A simple, right-to-the-point, easy-to-use online unit converter.
@@ -11,93 +11,93 @@
 
         Area:
 
-        - Square Mile     
-        - Square Yard     
-        - Square Foot     
-        - Square Inch     
-        - Hectare         
-        - Acre            
+        - Square Mile
+        - Square Yard
+        - Square Foot
+        - Square Inch
+        - Hectare
+        - Acre
         - Square Kilometer
-        - Square Meter    
+        - Square Meter
         - Square Centimeter
         - Square Millimeter
 
         Energy:
 
-        - Btus             
-        - Calories         
-        - Ergs             
-        - Foot-Pounds      
-        - Joules           
+        - Btus
+        - Calories
+        - Ergs
+        - Foot-Pounds
+        - Joules
         - Kilogram-Calories
-        - Kilogram-Meters  
-        - Kilowatt-Hours   
-        - Newton-Meters    
-        - Watt-Hours       
+        - Kilogram-Meters
+        - Kilowatt-Hours
+        - Newton-Meters
+        - Watt-Hours
 
         Temperature:
 
-        - Celsius   
+        - Celsius
         - Fahrenheit
-        - Kelvin    
+        - Kelvin
 
         Length:
 
         - Mile (nautical)
-        - Mile         
-        - Yard         
-        - Foot         
-        - Inch         
-        - Kilometer    
-        - Meter        
-        - Centimeter   
-        - Millimeter   
+        - Mile
+        - Yard
+        - Foot
+        - Inch
+        - Kilometer
+        - Meter
+        - Centimeter
+        - Millimeter
 
         Weight:
 
         - Short Ton (US)
-        - Pound (US)  
-        - Ounce (US)  
-        - Stone       
+        - Pound (US)
+        - Ounce (US)
+        - Stone
         - Long Ton (UK)
-        - Metric Ton  
-        - Kilogram    
-        - Gram        
+        - Metric Ton
+        - Kilogram
+        - Gram
 
         Speed:
 
-        - Knots            
-        - Miles/Hour       
-        - Miles/Minute     
-        - Feet/Minute      
-        - Feet/Second      
-        - Kilometers/Hour  
+        - Knots
+        - Miles/Hour
+        - Miles/Minute
+        - Feet/Minute
+        - Feet/Second
+        - Kilometers/Hour
         - Kilometers/Minute
-        - Meters/Second             
+        - Meters/Second
 
         Volume:
 
-        - Cubic Feet       
+        - Cubic Feet
         - Gallon (Imperial)
-        - Gallon (US)      
-        - Quart (US)       
-        - Pint (US)        
-        - Fluid Ounce (US) 
-        - Cup              
-        - Tablespoon       
-        - Teaspoon         
-        - Dram (US)        
-        - Cubic Meter      
-        - Liter            
+        - Gallon (US)
+        - Quart (US)
+        - Pint (US)
+        - Fluid Ounce (US)
+        - Cup
+        - Tablespoon
+        - Teaspoon
+        - Dram (US)
+        - Cubic Meter
+        - Liter
 
         Time:
 
-        - Years       
-        - Weeks       
-        - Days        
-        - Hours       
-        - Minutes     
-        - Seconds     
+        - Years
+        - Weeks
+        - Days
+        - Hours
+        - Minutes
+        - Seconds
         - Milliseconds
         - Microseconds
         - Nanoseconds">
@@ -119,9 +119,9 @@
         <main class="main fixedSize">
         <div>
             <form name="form" ng-controller="MainCtrl" novalidate>
-                
+
                 <!-- Images-->
-                
+
                 <ng-switch on="type">
                     <div ng-switch-when="none">
                         <div id="over">
@@ -134,20 +134,20 @@
                         </div>
                     </div>
                 </ng-switch>
-                
-                
+
+
                 <!--
                 <div id="over">
                     <span class="Centerer"></span><img class="Centered images" ng-src="images/{{type}}.png" alt="{{type}}"/>
                 </div>
                 -->
                 <!-- /Images-->
-                
+
                 <!-- break line to separate elements using bootstrap-->
                 <div class="clearfix separator" style="margin: 20px"></div>
-                
+
                 <!-- Type select combo box-->
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <select class="form-control input-lg" ng-model="type" ng-options="item for item in typeArray">
                         <option style="display:none" value="">select an unit type</option>
                     </select>
@@ -155,9 +155,9 @@
                 <!-- /Type select combo box-->
                 <!-- break line to separate elements using bootstrap-->
                 <div class="clearfix separator" style="margin: 20px"></div>
-                
+
                 <!-- input unit select combo box-->
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space">
                     <ng-switch on="type">
                     <div ng-switch-when="Area">
                         <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in areaArray" ng-change="convert(type, from, to, input_unit)" >
@@ -214,7 +214,7 @@
                 </div>
                 <!-- /input unit select combo box-->
                 <!-- output unit select combo box-->
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space">
                     <ng-switch on="type">
                     <div ng-switch-when="Area">
                         <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in areaArray" ng-change="convert(type, from, to, input_unit)">
@@ -270,15 +270,15 @@
                     </ng-switch>
                 </div>
                 <!-- output unit select combo box-->
-                
+
                 <!-- break line to separate elements using bootstrap-->
                 <div class="clearfix separator" style="margin: 10px"></div>
-                
+
                 <!-- Text input -->
-                <div class="col-xs-6" >
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space" >
                     <input class="form-control" type="text" ng-model="input_unit" placeholder="0" valid-number required="true" autofocus>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="0" ng-model="output_unit" readonly id="result">
                         <span class="input-group-addon" id="copy_button" data-clipboard-target="#result">
@@ -289,34 +289,34 @@
                 <!-- /Text input -->
                 <!-- break line to separate elements using bootstrap-->
                 <div class="clearfix separator" style="margin: 15px"></div>
-                
+
                 <!-- Field required warning -->
                 <p ng-show="input_unit.$invalid && input_unit.$touched" style="text-align: center; color: #ED4337;" name="warning" ng-model="warning">Please enter a number.</p>
                 <!-- /Field required warning -->
-                
+
                 <!-- Buttons -->
-                <div class="col-xs-8" style="left:15%">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="left:15%">
                     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="convert(type, from, to, input_unit)">Convert</button>
                     <button type="button" class="btn btn-danger btn-lg btn-block" ng-click="invert(type, from, to, input_unit)">Invert</button>
                 </div>
                 <!-- /Buttons -->
             </form>
-            
+
             <!-- break line to separate elements using bootstrap-->
             <div class="clearfix separator" style="margin: 10px"></div>
         </div>
-        
+
         <p style="text-align: center; color: #bfbcbc;">Made with &hearts; by Ricardo Fabila</p>
         </main>
-        
+
         <script>
         var btn = document.getElementById('copy_button');
         var clipboard = new Clipboard(btn);
-        
+
         clipboard.on('success', function(e) {
         //console.log(e);
         });
-        
+
         clipboard.on('error', function(e) {
         console.log(e);
         console.log("It seams the copy to clipboard funciton is not working correctly.");
