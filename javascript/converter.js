@@ -15,90 +15,109 @@
  * this way a way easier to read and to debug. A little extra work goes a
  * long way. Code is read 1000 times more then it is written.
  *
+ * All code is compliant with google's JavaScript standards
  */
 
-"use strict";
+'use strict';
 
 //<<<<<<<<<<<<<<<<<<<<<<  Area Functions >>>>>>>>>>>>>>>>>>>>>>
 
 //––––––––––––––––––––––––––  toCMs Functions  ––––––––––––––––––––––––––
 
+/**
+ * squaremilimetersToCms - converts squaremilimeters to centimeters
+ *
+ * @param  {Number} milimeters - takes in milimiters
+ * @return {Number}            - returns centimeters
+ */
 function squaremilimetersToCms(milimeters) {
-    return milimeters * 0.01;
+  return milimeters * 0.01;
 }
 
 function squarecmsToCms(cms) {
-    return cms;
+  return cms;
 }
 
 function squaremetersToCms(meters) {
-    return meters * 10000;
-}
-
-function squarekilometersToCms(kilometers) {
-    return kilometers * 10000000000;
+  let result = kilometers * 10000000000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function hectareasToCms(hectareas) {
-    return hectareas * 100000000;
+  let result = hectareas * 100000000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function squareinchesToCms(inches) {
-    return inches * 6.4516;
+  let result = inches * 6.4516;
+  return Math.round(result * 100000) / 100000;
 }
 
 function squarefeetToCms(feet) {
-    return 929.0304 * feet;
+  let result = 929.0304 * feet;
+  return Math.round(result * 100000) / 100000;
 }
 
 function squareyardsToCms(yard) {
-    return 8361.2736 * yard;
+  let result = 8361.2736 * yard;
+  return Math.round(result * 100000) / 100000;
 }
 
 function squaremilesToCms(miles) {
-    return miles * 25899881103.36;
+  let result = miles * 25899880448;
+  return Math.round(result * 100000) / 100000;
 }
 
 function acresToCms(acres) {
-    return acres * 40468564.224;
+  let result = acres * 40468564.224;
+  return Math.round(result * 100000) / 100000;
 }
 
 //––––––––––––––––––––––––––  cmTo Functions  ––––––––––––––––––––––––––
 
 function cmsToSquaremilimeters(cm) {
-    return cm * 100;
+  let result = cm * 100;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToSquaremeters(cm) {
-    return cm * 0.0001;
+  let result = cm * 0.0001;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToSquarekilometers(cm) {
-    return cm * 10.0e-11;
+  let result = cm * 10.0e-11;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToHectareas(cm) {
-    return cm * 1.0e-8;
+  let result = cm * 1.0e-8;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToSquareinches(cm) {
-    return cm * 0.15500031;
+  let result = cm * 0.15500031;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToSquarefeet(cm) {
-    return cm * 0.00107639104;
+  let result = cm * 0.00107639104;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToSquareyards(cm) {
-    return cm * 0.000119599005;
+  let result = cm * 0.000119599005;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToSquaremiles(cm) {
-    return cm * 3.8610216e-11;
+  let result = cm * 3.8610216e-11;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmsToAcres(cm) {
-    return cm * 2.47e-8;
+  let result = cm * 2.47e-8;
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<  Computer Storage Functions  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -106,49 +125,59 @@ function cmsToAcres(cm) {
 //––––––––––––––––––––––––––  toBits Functions  ––––––––––––––––––––––––––
 
 function bitsToBits(bits) {
-    return bits;
+  return bits;
 }
 
 function bytesToBits(bytes) {
-    return bytes * 8;
+  let result = bytes * 8;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilobytesToBits(kilobytes) {
-    return kilobytes * 1024 * 8;
+  let result = kilobytes * 1024 * 8;
+  return Math.round(result * 100000) / 100000;
 }
 
 function megabytesToBits(megabytes) {
-    return megabytes * 1024 * 1024 * 8;
+  let result = megabytes * 1024 * 1024 * 8;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gigabytesToBits(gigabytes) {
-    return gigabytes * 1024 * 1024 * 1024 * 8;
+  let result = gigabytes * 1024 * 1024 * 1024 * 8;
+  return Math.round(result * 100000) / 100000;
 }
 
 function terabytesToBits(terabytes) {
-    return terabytes * 1024 * 1024 * 1024 * 1024 * 8;
+  let result = terabytes * 1024 * 1024 * 1024 * 1024 * 8;
+  return Math.round(result * 100000) / 100000;
 }
 
 //––––––––––––––––––––––––––  bitsTo Functions  ––––––––––––––––––––––––––
 
 function bitsToBytes(bits) {
-    return bits / 8;
+  let result = bits / 8;
+  return Math.round(result * 100000) / 100000;
 }
 
 function bitsToKilobytes(bits) {
-    return bits / (1024 * 8);
+  let result = bits / (1024 * 8);
+  return Math.round(result * 100000) / 100000;
 }
 
 function bitsToMegabytes(bits) {
-    return bits / (1024 * 1024 * 8);
+  let result = bits / (1024 * 1024 * 8);
+  return Math.round(result * 100000) / 100000;
 }
 
 function bitsToGigabytes(bits) {
-    return bits / (1024 * 1024 * 1024 * 8);
+  let result = bits / (1024 * 1024 * 1024 * 8);
+  return Math.round(result * 100000) / 100000;
 }
 
 function bitsToTerabytes(bits) {
-    return bits / (1024 * 1024 * 1024 * 1024 * 8);
+  let result = bits / (1024 * 1024 * 1024 * 1024 * 8);
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<  Energy Functions  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -156,148 +185,180 @@ function bitsToTerabytes(bits) {
 //––––––––––––––––––––––––––  toCalories Functions  ––––––––––––––––––––––––––
 
 function caloriesTocalories(calories) {
-    return calories;
+  return calories;
 }
 
 function btusTocalories(btus) {
-    return btus * 251.995758;
+  let result = btus * 251.995758;
+  return Math.round(result * 100000) / 100000;
 }
 
 function ergsTocalories(ergs) {
-    return ergs * 2.39006e-13;
+  let result = ergs * 2.39006e-13;
+  return Math.round(result * 100000) / 100000;
 }
 
 function footPoundsTocalories(footPounds) {
-    return footPounds * 0.323832;
+  let result = footPounds * 0.323832;
+  return Math.round(result * 100000) / 100000;
 }
 
 function joulesTocalories(joules) {
-    return joules * 0.238846;
+  let result = joules * 0.238846;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilogramCaloriesTocalories(kilogramCalories) {
-    return kilogramCalories * 1000;
+  let result = kilogramCalories * 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilogramMetersTocalories(kilogramMeters) {
-    return kilogramMeters * 2.342278;
+  let result = kilogramMeters * 2.342278;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilowattHoursTocalories(kilowattHours) {
-    return kilowattHours * 859845.25;
+  let result = kilowattHours * 859845.25;
+  return Math.round(result * 100000) / 100000;
 }
 
 function newtonMetersTocalories(newtonMeters) {
-    return newtonMeters * 0.238846;
+  let result = newtonMeters * 0.238846;
+  return Math.round(result * 100000) / 100000;
 }
 
 function wattHoursTocalories(wattHours) {
-    return wattHours * 859.845215;
+  let result = wattHours * 859.845215;
+  return Math.round(result * 100000) / 100000;
 }
 
 //––––––––––––––––––––––––––  caloriesTo Functions  ––––––––––––––––––––––––––
 
 function caloriesToBtus(calories) {
-    return calories / 251.995758;
+  let result = calories / 251.995758;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToErgs(calories) {
-    return calories / 2.39006e-13;
+  let result = calories / 2.39006e-13;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToFootPounds(calories) {
-    return calories / 0.323832;
+  let result = calories / 0.323832;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToJoules(calories) {
-    return calories / 0.238846;
+  let result = calories / 0.238846;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToKilogramCalories(calories) {
-    return calories / 1000;
+  let result = calories / 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToKilogramMeters(calories) {
-    return calories / 2.342278;
+  let result = calories / 2.342278;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesKToilowattHours(calories) {
-    return calories / 859845.25;
+  let result = calories / 859845.25;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToNewtonMeters(calories) {
-    return calories / 0.238846;
+  let result = calories / 0.238846;
+  return Math.round(result * 100000) / 100000;
 }
 
 function caloriesToWattHours(calories) {
-    return calories / 859.845215;
+  let result = calories / 859.845215;
+  return Math.round(result * 100000) / 100000;
 }
-
 
 //<<<<<<<<<<<<<<<<<<<<<<  Length Functions >>>>>>>>>>>>>>>>>>>>>>
 
 //––––––––––––––––––––––––––  toCm Functions  ––––––––––––––––––––––––––
 
 function mmToCm(mm) {
-    return mm / 10;
+  let result = mm / 10;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToCm(cm) {
-    return cm;
+  let result = cm;
+  return Math.round(result * 100000) / 100000;
 }
 
 function metersToCm(meters) {
-    return meters * 100;
+  let result = meters * 100;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilometersToCm(kilometers) {
-    return kilometers * 100000;
+  let result = kilometers * 100000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function inchesToCm(inches) {
-    return 2.54 * inches;
+  let result = 2.54 * inches;
+  return Math.round(result * 100000) / 100000;
 }
 
 function feetToCm(feet) {
-    return 30.48 * feet;
+  let result = 30.48 * feet;
+  return Math.round(result * 100000) / 100000;
 }
 
 function yardsToCm(yard) {
-    return 91.440002 * yard;
+  let result = 91.440002 * yard;
+  return Math.round(result * 100000) / 100000;
 }
 
 function milesToCm(miles) {
-    return 160934.406250 * miles;
+  let result = 160934.406250 * miles;
+  return Math.round(result * 100000) / 100000;
 }
 
 //––––––––––––––––––––––––––  cmTo Functions  ––––––––––––––––––––––––––
 
 function cmToMm(cm) {
-    return cm * 10;
+  let result = cm * 10;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToMeters(cm) {
-    return cm / 100;
+  let result = cm / 100;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToKilometers(cm) {
-    return cm / 100000;
+  let result = cm / 100000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToInches(cm) {
-    return cm / 2.54;
+  let result = cm / 2.54;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToFeet(cm) {
-    return cm / 30.48;
+  let result = cm / 30.48;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToYards(cm) {
-    return cm / 91.440002;
+  let result = cm / 91.440002;
+  return Math.round(result * 100000) / 100000;
 }
 
 function cmToMiles(cm) {
-    return cm / 160934.406250;
+  let result = cm / 160934.406250;
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<  Speed Functions >>>>>>>>>>>>>>>>>>>>>>
@@ -305,65 +366,79 @@ function cmToMiles(cm) {
 //––––––––––––––––––––––––––  toMeterPerSecond Functions  ––––––––––––––––––––––––––
 
 function knotsToMeterPerSecond(knots) {
-    return knots * 0.514444;
+  let result = knots * 0.514444;
+  return Math.round(result * 100000) / 100000;
 }
 
 function milesPerHourToMeterPerSecond(milesPerHour) {
-    return milesPerHour * 0.447040;
+  let result = milesPerHour * 0.447040;
+  return Math.round(result * 100000) / 100000;
 }
 
 function milesPerMinuteToMeterPerSecond(milesPerMinute) {
-    return milesPerMinute * 26.822399;
+  let result = milesPerMinute * 26.822399;
+  return Math.round(result * 100000) / 100000;
 }
 
 function feetPerMinuteToMeterPerSecond(feetPerMinute) {
-    return feetPerMinute * 0.005080;
+  let result = feetPerMinute * 0.005080;
+  return Math.round(result * 100000) / 100000;
 }
 
 function feetPerSecondToMeterPerSecond(feetPerSecond) {
-    return feetPerSecond * 0.304800;
+  let result = feetPerSecond * 0.304800;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilometersPerHourToMeterPerSecond(kilometersPerHour) {
-    return kilometersPerHour * 0.277778;
+  let result = kilometersPerHour * 0.277778;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilometersPerMinuteToMeterPerSecond(kilometersPerMinute) {
-    return kilometersPerMinute * 16.666666;
+  let result = kilometersPerMinute * 16.666666;
+  return Math.round(result * 100000) / 100000;
 }
 
 function metersPerSecondToMeterPerSecond(metersPerSecond) {
-    return metersPerSecond;
+  return metersPerSecond;
 }
 
 //––––––––––––––––––––––––––  metersPerSecondTo Functions  ––––––––––––––––––––––––––
 
 function meterPerSecondKnots(metersPerSecond) {
-    return metersPerSecond / 0.514444;
+  let result = metersPerSecond / 0.514444;
+  return Math.round(result * 100000) / 100000;
 }
 
 function meterPerSecondMilesPerHour(metersPerSecond) {
-    return metersPerSecond / 0.447040;
+  let result = metersPerSecond / 0.447040;
+  return Math.round(result * 100000) / 100000;
 }
 
 function meterPerSecondMilesPerMinute(metersPerSecond) {
-    return metersPerSecond / 26.822399;
+  let result = metersPerSecond / 26.822399;
+  return Math.round(result * 100000) / 100000;
 }
 
 function meterPerSecondFeetPerMinutes(metersPerSecond) {
-    return metersPerSecond / 0.005080;
+  let result = metersPerSecond / 0.005080;
+  return Math.round(result * 100000) / 100000;
 }
 
 function meterPerSecondFeetPerSecond(metersPerSecond) {
-    return metersPerSecond / 0.304800;
+  let result = metersPerSecond / 0.304800;
+  return Math.round(result * 100000) / 100000;
 }
 
 function meterPerSecondToKilometersPerHour(metersPerSecond) {
-    return metersPerSecond / 0.277778;
+  let result = metersPerSecond / 0.277778;
+  return Math.round(result * 100000) / 100000;
 }
 
 function meterPerSecondToKilometersPerMinute(metersPerSecond) {
-    return metersPerSecond / 16.666666;
+  let result = metersPerSecond / 16.666666;
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<  Time Functions  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -371,217 +446,261 @@ function meterPerSecondToKilometersPerMinute(metersPerSecond) {
 //––––––––––––––––––––––––––  toNanoseconds Functions  ––––––––––––––––––––––––––
 
 function yearsToNanoseconds(years) {
-    return years * 3.154e+16;
+  let result = years * 3.154e+16;
+  return Math.round(result * 100000) / 100000;
 }
 
 function weeksToNanoseconds(weeks) {
-    return weeks * 6.048e+14;
+  let result = weeks * 6.048e+14;
+  return Math.round(result * 100000) / 100000;
 }
 
 function daysToNanoseconds(days) {
-    return days * 8.64e+13;
+  let result = days * 8.64e+13;
+  return Math.round(result * 100000) / 100000;
 }
 
 function hoursToNanoseconds(hours) {
-    return hours * 3.6e+12;
+  let result = hours * 3.6e+12;
+  return Math.round(result * 100000) / 100000;
 }
 
 function minutesToNanoseconds(minutes) {
-    return minutes * 6e+10;
+  let result = minutes * 6e+10;
+  return Math.round(result * 100000) / 100000;
 }
 
 function secondsToNanoseconds(seconds) {
-    return seconds * 1e+9;
+  let result = seconds * 1e+9;
+  return Math.round(result * 100000) / 100000;
 }
 
 function millisecondsToNanoseconds(milliseconds) {
-    return milliseconds * 1e+6;
+  let result = milliseconds * 1e+6;
+  return Math.round(result * 100000) / 100000;
 }
 
 function microsecondsToNanoseconds(microseconds) {
-    return microseconds * 1000;
+  let result = microseconds * 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToNanoseconds(nanoseconds) {
-    return nanoseconds;
+  return nanoseconds;
 }
 
 //––––––––––––––––––––––––––  nanosecondsTo Functions  ––––––––––––––––––––––––––
 
 function nanosecondsToYears(nanoseconds) {
-    return nanoseconds / 3.154e+16;
+  let result = nanoseconds / 3.154e+16;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToWeeks(nanoseconds) {
-    return nanoseconds / 6.048e+14;
+  let result = nanoseconds / 6.048e+14;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToDays(nanoseconds) {
-    return nanoseconds / 8.64e+13;
+  let result = nanoseconds / 8.64e+13;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToHours(nanoseconds) {
-    return nanoseconds / 3.6e+12;
+  let result = nanoseconds / 3.6e+12;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToMinutes(nanoseconds) {
-    return nanoseconds / 6e+10;
+  let result = nanoseconds / 6e+10;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToSeconds(nanoseconds) {
-    return nanoseconds / 1e+9;
+  let result = nanoseconds / 1e+9;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToMilliseconds(nanoseconds) {
-    return nanoseconds / 1e+6;
+  let result = nanoseconds / 1e+6;
+  return Math.round(result * 100000) / 100000;
 }
 
 function nanosecondsToMicroseconds(nanoseconds) {
-    return nanoseconds / 1000;
+  let result = nanoseconds / 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<  Temperature Functions  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 function celciusToCelcius(celcius) {
-    return celcius;
+  return celcius;
 }
 
 function celciusToFarenheit(celcius) {
-    return (celcius * 9 / 5) + 32;
+  let result = (celcius * 9 / 5) + 32;
+  return Math.round(result * 100000) / 100000;
 }
 
 function celciusToKelvin(celcius) {
-    return Number(celcius) + 273.15;
+  let result = Number(celcius) + 273.15;
+  return Math.round(result * 100000) / 100000;
 }
 
 function farenheitToFarenheit(farenheit) {
-    return farenheit;
+  return farenheit;
 }
 
 function farenheitToCelcius(farenheit) {
-    return (farenheit - 32) * 5 / 9;
+  let result = (farenheit - 32) * 5 / 9;
+  return Math.round(result * 100000) / 100000;
 }
 
 function farenheitToKelvin(farenheit) {
-    return (Number(farenheit) + 459.67) * (5 / 9);
+  let result = (Number(farenheit) + 459.67) * (5 / 9);
+  return Math.round(result * 100000) / 100000;
 }
 
 function kelvinToCelsius(kelvin) {
-    return kelvin - 273.15;
+  let result = kelvin - 273.15;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kelvinToKelvin(kelvin) {
-    return kelvin;
+  return kelvin;
 }
 
 function kelvinToFarenheit(kelvin) {
-    return (kelvin * (9 / 5)) - 459.67;
+  let result = (kelvin * (9 / 5)) - 459.67;
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<  Volume Functions >>>>>>>>>>>>>>>>>>>>>>
 
 //––––––––––––––––––––––––––  toMililiters Functions  ––––––––––––––––––––––––––
 
-function cubicFeetToMililiters(cubicFeet){
-    return cubicFeet * 28316.8;
+function cubicFeetToMililiters(cubicFeet) {
+  let result = cubicFeet * 28316.8;
+  return Math.round(result * 100000) / 100000;
 }
 
-function gallonImperialToMililiters(gallonImperial){
-    return gallonImperial * 4546.09;
+function gallonImperialToMililiters(gallonImperial) {
+  let result = gallonImperial * 4546.09;
+  return Math.round(result * 100000) / 100000;
 }
 
-function gallonUSToMililiters(gallonUS){
-    return gallonUS * 3785.41;
+function gallonUSToMililiters(gallonUS) {
+  let result = gallonUS * 3785.41;
+  return Math.round(result * 100000) / 100000;
 }
 
-function quartUSToMililiters(quartUS){
-    return quartUS * 946.353;
+function quartUSToMililiters(quartUS) {
+  let result = quartUS * 946.353;
+  return Math.round(result * 100000) / 100000;
 }
 
-function pintUSToMililiters(pintUS){
-    return pintUS * 473.176;
+function pintUSToMililiters(pintUS) {
+  let result = pintUS * 473.176;
+  return Math.round(result * 100000) / 100000;
 }
 
-function fluidOunceUSToMililiters(fluidOunceUS){
-    return fluidOunceUS * 29.5735;
+function fluidOunceUSToMililiters(fluidOunceUS) {
+  let result = fluidOunceUS * 29.5735;
+  return Math.round(result * 100000) / 100000;
 }
 
-function cupToMililiters(cup){
-    return cup * 240;
+function cupToMililiters(cup) {
+  let result = cup * 240;
+  return Math.round(result * 100000) / 100000;
 }
 
-function tableSpoonToMililiters(tableSpoon){
-    return tableSpoon * 14.7868;
+function tableSpoonToMililiters(tableSpoon) {
+  let result = tableSpoon * 14.7868;
+  return Math.round(result * 100000) / 100000;
 }
 
-function dramUSToMililiters(dramUS){
-    return dramUS * 3.69669;
+function dramUSToMililiters(dramUS) {
+  let result = dramUS * 3.69669;
+  return Math.round(result * 100000) / 100000;
 }
 
-function cubicCentimeterToMililiters(cubicCentimeter){
-    return cubicCentimeter;
+function cubicCentimeterToMililiters(cubicCentimeter) {
+  return cubicCentimeter;
 }
 
-function cubicMeterToMililiters(cubicMeter){
-    return cubicMeter * 1e+6;
+function cubicMeterToMililiters(cubicMeter) {
+  let result = cubicMeter * 1e+6;
+  return Math.round(result * 100000) / 100000;
 }
 
-function literToMililiters(liter){
-    return liter * 1000;
+function literToMililiters(liter) {
+  let result = liter * 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililiterstoMililiters(mililiters){
-    return mililiters;
+function mililiterstoMililiters(mililiters) {
+  return mililiters;
 }
 
 //––––––––––––––––––––––––––  mililitersTo Functions  ––––––––––––––––––––––––––
 
-function mililitersToCubicFeet(mililiters){
-    return mililiters / 28316.8;
+function mililitersToCubicFeet(mililiters) {
+  let result = mililiters / 28316.8;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToGallonImperial(mililiters){
-    return mililiters / 4546.09;
+function mililitersToGallonImperial(mililiters) {
+  let result = mililiters / 4546.09;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToGallonUS(mililiters){
-    return mililiters / 3785.41;
+function mililitersToGallonUS(mililiters) {
+  let result = mililiters / 3785.41;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToQuartUS(mililiters){
-    return mililiters / 946.353;
+function mililitersToQuartUS(mililiters) {
+  let result = mililiters / 946.353;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToPintUS(mililiters){
-    return mililiters / 473.176;
+function mililitersToPintUS(mililiters) {
+  let result = mililiters / 473.176;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToFluidOunceUS(mililiters){
-    return mililiters / 29.5735;
+function mililitersToFluidOunceUS(mililiters) {
+  let result = mililiters / 29.5735;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToCup(mililiters){
-    return mililiters / 240;
+function mililitersToCup(mililiters) {
+  let result = mililiters / 240;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToTablespoon(mililiters){
-    return mililiters / 14.7868;
+function mililitersToTablespoon(mililiters) {
+  let result = mililiters / 14.7868;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToDramUS(mililiters){
-    return mililiters / 3.69669;
+function mililitersToDramUS(mililiters) {
+  let result = mililiters / 3.69669;
+  return Math.round(result * 100000) / 100000;
 }
 
-function mililitersToCubicCentimeter(mililiters){
-    return mililiters;
+function mililitersToCubicCentimeter(mililiters) {
+  return mililiters;
 }
 
-function mililitersToCubicMeter(mililiters){
-    return mililiters / 1e+6;
+function mililitersToCubicMeter(mililiters) {
+  let result = mililiters / 1e+6;
+  return Math.round(result * 100000) / 100000;
 }
 
-function MililitersToLiter(liter){
-    return liter / 1000;
+function MililitersToLiter(liter) {
+  let result = liter / 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<  Weight Functions >>>>>>>>>>>>>>>>>>>>>>
@@ -589,63 +708,77 @@ function MililitersToLiter(liter){
 //––––––––––––––––––––––––––  toGrams Functions  ––––––––––––––––––––––––––
 
 function shortTonstoGrams(shortTon) {
-    return shortTon * 907184.75;
+  let result = shortTon * 907184.75;
+  return Math.round(result * 100000) / 100000;
 }
 
 function poundstoGrams(pounds) {
-    return pounds * 453.592377;
+  let result = pounds * 453.592377;
+  return Math.round(result * 100000) / 100000;
 }
 
 function ouncetoGrams(ounce) {
-    return ounce * 28.349524;
+  let result = ounce * 28.349524;
+  return Math.round(result * 100000) / 100000;
 }
 
 function stonetoGrams(stone) {
-    return stone * 6350.292969;
+  let result = stone * 6350.292969;
+  return Math.round(result * 100000) / 100000;
 }
 
 function longTontoGrams(longTon) {
-    return longTon * 1016046.937500;
+  let result = longTon * 1016046.937500;
+  return Math.round(result * 100000) / 100000;
 }
 
 function metricTontoGrams(metricTon) {
-    return metricTon * 1000000;
+  let result = metricTon * 1000000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function kilogramtoGrams(kilogram) {
-    return kilogram * 1000;
+  let result = kilogram * 1000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramstoGrams(grams) {
-    return grams;
+  return grams;
 }
 
 //––––––––––––––––––––––––––  gramsTo Functions  ––––––––––––––––––––––––––
 
 function gramsToShortTons(grams) {
-    return grams / 907184.75;
+  let result = grams / 907184.75;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramsToPounds(grams) {
-    return grams / 453.592377;
+  let result = grams / 453.592377;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramsToOunce(grams) {
-    return grams / 28.349524;
+  let result = grams / 28.349524;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramsToStone(grams) {
-    return grams / 6350.292969;
+  let result = grams / 6350.292969;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramsToLongTon(grams) {
-    return grams / 1016046.937500;
+  let result = grams / 1016046.937500;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramsToMetricTon(grams) {
-    return grams / 1000000;
+  let result = grams / 1000000;
+  return Math.round(result * 100000) / 100000;
 }
 
 function gramsToKilogram(grams) {
-    return grams / 1000;
+  let result = grams / 1000;
+  return Math.round(result * 100000) / 100000;
 }

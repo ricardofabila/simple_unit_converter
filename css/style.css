@@ -60,3 +60,9 @@
     display: inline-block;
     vertical-align: middle;
 }
+
+@media only screen and (max-width: 641px) {
+  .bottom-space{
+    margin-bottom: 10px;
+  }
+}

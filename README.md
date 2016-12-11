@@ -1,6 +1,6 @@
 # Simple Unit Converter
 
-[TOC]
+https://ricardofabila.github.io/simple_unit_converter/
 
 **A beautiful minimalistic, right to the point unit converter.**
 
