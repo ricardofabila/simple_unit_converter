@@ -160,47 +160,47 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space">
                     <ng-switch on="type">
                     <div ng-switch-when="Area">
-                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in areaArray" ng-change="convert(type, from, to, input_unit)" >
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in areaArray" ng-change="convert(type, from, to, inputUnit)" >
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Computer Storage">
-                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in computerStorageArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in computerStorageArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Energy">
-                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in energyArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in energyArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Length">
-                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in lengthArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.from" ng-options="item for item in lengthArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Weight">
-                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in weightArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in weightArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Speed">
-                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in speedArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in speedArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Temperature">
-                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in temperatureArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in temperatureArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Time">
-                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in timeArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in timeArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Volume">
-                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in volumeArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.from" ng-options="item for item in volumeArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                             <option ng-repeat="item in volumeArray">{{item}}</option>
                         </select>
@@ -217,47 +217,47 @@
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space">
                     <ng-switch on="type">
                     <div ng-switch-when="Area">
-                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in areaArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in areaArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Computer Storage">
-                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in computerStorageArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in computerStorageArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Energy">
-                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in energyArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in energyArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Length">
-                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in lengthArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg" ng-model="$parent.to" ng-options="item for item in lengthArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Weight">
-                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in weightArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in weightArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Speed">
-                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in speedArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in speedArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Temperature">
-                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in temperatureArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in temperatureArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Time">
-                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in timeArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in timeArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                         </select>
                     </div>
                     <div ng-switch-when="Volume">
-                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in volumeArray" ng-change="convert(type, from, to, input_unit)">
+                        <select class="form-control input-lg"  ng-model="$parent.to" ng-options="item for item in volumeArray" ng-change="convert(type, from, to, inputUnit)">
                             <option style="display:none" value="">select unit</option>
                             <option ng-repeat="item in volumeArray">{{item}}</option>
                         </select>
@@ -276,11 +276,11 @@
 
                 <!-- Text input -->
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space" >
-                    <input class="form-control" type="text" ng-model="input_unit" placeholder="0" valid-number required="true" autofocus>
+                    <input class="form-control" type="text" ng-model="inputUnit" placeholder="0" valid-number required="true" autofocus>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-space">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="0" ng-model="output_unit" readonly id="result">
+                        <input type="text" class="form-control" placeholder="0" ng-model="outputUnit" readonly id="result">
                         <span class="input-group-addon" id="copy_button" data-clipboard-target="#result">
                             <img src="images/copy.svg" alt="Copy to clipboard" width="16">
                         </span>
@@ -291,13 +291,13 @@
                 <div class="clearfix separator" style="margin: 15px"></div>
 
                 <!-- Field required warning -->
-                <p ng-show="input_unit.$invalid && input_unit.$touched" style="text-align: center; color: #ED4337;" name="warning" ng-model="warning">Please enter a number.</p>
+                <p ng-show="inputUnit.$invalid && inputUnit.$touched" style="text-align: center; color: #ED4337;" name="warning" ng-model="warning">Please enter a number.</p>
                 <!-- /Field required warning -->
 
                 <!-- Buttons -->
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="left:15%">
-                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="convert(type, from, to, input_unit)">Convert</button>
-                    <button type="button" class="btn btn-danger btn-lg btn-block" ng-click="invert(type, from, to, input_unit)">Invert</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="convert(type, from, to, inputUnit)">Convert</button>
+                    <button type="button" class="btn btn-danger btn-lg btn-block" ng-click="invert(type, from, to, inputUnit)">Invert</button>
                 </div>
                 <!-- /Buttons -->
             </form>

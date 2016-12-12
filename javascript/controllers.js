@@ -30,7 +30,7 @@ app.controller('MainCtrl', function($scope) {
     $scope.convert = function(type, inputType, outputType, inputQuantity) {
 
         if (inputType === outputType) {
-          $scope.output_unit = inputQuantity;
+          $scope.outputUnit = inputQuantity;
           return inputQuantity;
         }
 
@@ -38,31 +38,31 @@ app.controller('MainCtrl', function($scope) {
 
         switch (type) {
         case 'Area':
-          $scope.output_unit = $scope.areaConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.areaConvert(inputType, outputType, inputQuantity);
           return $scope.areaConvert(inputType, outputType, inputQuantity);
         case 'Computer Storage':
-          $scope.output_unit = $scope.computerStorageConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.computerStorageConvert(inputType, outputType, inputQuantity);
           return $scope.computerStorageConvert(inputType, outputType, inputQuantity);
         case 'Energy':
-          $scope.output_unit = $scope.energyConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.energyConvert(inputType, outputType, inputQuantity);
           return $scope.energyConvert(inputType, outputType, inputQuantity);
         case 'Length':
-          $scope.output_unit = $scope.lengthConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.lengthConvert(inputType, outputType, inputQuantity);
           return $scope.lengthConvert(inputType, outputType, inputQuantity);
         case 'Weight':
-          $scope.output_unit = $scope.weightConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.weightConvert(inputType, outputType, inputQuantity);
           return $scope.weightConvert(inputType, outputType, inputQuantity);
         case 'Speed':
-          $scope.output_unit = $scope.speedConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.speedConvert(inputType, outputType, inputQuantity);
           return $scope.speedConvert(inputType, outputType, inputQuantity);
         case 'Temperature':
-          $scope.output_unit = $scope.temperatureConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.temperatureConvert(inputType, outputType, inputQuantity);
           return $scope.temperatureConvert(inputType, outputType, inputQuantity);
         case 'Time':
-          $scope.output_unit = $scope.timeConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.timeConvert(inputType, outputType, inputQuantity);
           return $scope.timeConvert(inputType, outputType, inputQuantity);
         case 'Volume':
-          $scope.output_unit = $scope.volumeConvert(inputType, outputType, inputQuantity);
+          $scope.outputUnit = $scope.volumeConvert(inputType, outputType, inputQuantity);
           return $scope.volumeConvert(inputType, outputType, inputQuantity);
         default:
           return 0;
