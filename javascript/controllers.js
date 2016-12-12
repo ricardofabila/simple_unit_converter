@@ -5,7 +5,7 @@ var app = angular.module('app', []);
 //The converter
 app.controller('MainCtrl', function($scope) {
 
-    $scope.type = "none"; 
+    $scope.type = 'none';
 
     $scope.typeArray = ['Area', 'Computer Storage', 'Energy', 'Length', 'Speed', 'Temperature', 'Time', 'Volume', 'Weight'];
 
@@ -30,774 +30,757 @@ app.controller('MainCtrl', function($scope) {
     $scope.convert = function(type, input_type, output_type, input_quantity) {
 
         if (input_type === output_type) {
-            $scope.output_unit = input_quantity;
-            return input_quantity;
+          $scope.output_unit = input_quantity;
+          return input_quantity;
         }
 
         /* Here goes a huge switch cecking every case for the input*/
 
         switch (type) {
-            case "Area":
-                $scope.output_unit = $scope.areaConvert(input_type, output_type, input_quantity);
-                return $scope.areaConvert(input_type, output_type, input_quantity);
-            case "Computer Storage":
-                $scope.output_unit = $scope.computerStorageConvert(input_type, output_type, input_quantity);
-                return $scope.computerStorageConvert(input_type, output_type, input_quantity);
-            case "Energy":
-                $scope.output_unit = $scope.energyConvert(input_type, output_type, input_quantity);
-                return $scope.energyConvert(input_type, output_type, input_quantity);
-            case "Length":
-                $scope.output_unit = $scope.lengthConvert(input_type, output_type, input_quantity);
-                return $scope.lengthConvert(input_type, output_type, input_quantity);
-            case "Weight":
-                $scope.output_unit = $scope.weightConvert(input_type, output_type, input_quantity);
-                return $scope.weightConvert(input_type, output_type, input_quantity);
-            case "Speed":
-                $scope.output_unit = $scope.speedConvert(input_type, output_type, input_quantity);
-                return $scope.speedConvert(input_type, output_type, input_quantity);
-            case "Temperature":
-                $scope.output_unit = $scope.temperatureConvert(input_type, output_type, input_quantity);
-                return $scope.temperatureConvert(input_type, output_type, input_quantity);
-            case "Time":
-                $scope.output_unit = $scope.timeConvert(input_type, output_type, input_quantity);
-                return $scope.timeConvert(input_type, output_type, input_quantity);
-            case "Volume":
-                $scope.output_unit = $scope.volumeConvert(input_type, output_type, input_quantity);
-                return $scope.volumeConvert(input_type, output_type, input_quantity);
-            default:
-                return 0;
-        }
+        case 'Area':
+          $scope.output_unit = $scope.areaConvert(input_type, output_type, input_quantity);
+          return $scope.areaConvert(input_type, output_type, input_quantity);
+        case 'Computer Storage':
+          $scope.output_unit = $scope.computerStorageConvert(input_type, output_type, input_quantity);
+          return $scope.computerStorageConvert(input_type, output_type, input_quantity);
+        case 'Energy':
+          $scope.output_unit = $scope.energyConvert(input_type, output_type, input_quantity);
+          return $scope.energyConvert(input_type, output_type, input_quantity);
+        case 'Length':
+          $scope.output_unit = $scope.lengthConvert(input_type, output_type, input_quantity);
+          return $scope.lengthConvert(input_type, output_type, input_quantity);
+        case 'Weight':
+          $scope.output_unit = $scope.weightConvert(input_type, output_type, input_quantity);
+          return $scope.weightConvert(input_type, output_type, input_quantity);
+        case 'Speed':
+          $scope.output_unit = $scope.speedConvert(input_type, output_type, input_quantity);
+          return $scope.speedConvert(input_type, output_type, input_quantity);
+        case 'Temperature':
+          $scope.output_unit = $scope.temperatureConvert(input_type, output_type, input_quantity);
+          return $scope.temperatureConvert(input_type, output_type, input_quantity);
+        case 'Time':
+          $scope.output_unit = $scope.timeConvert(input_type, output_type, input_quantity);
+          return $scope.timeConvert(input_type, output_type, input_quantity);
+        case 'Volume':
+          $scope.output_unit = $scope.volumeConvert(input_type, output_type, input_quantity);
+          return $scope.volumeConvert(input_type, output_type, input_quantity);
+        default:
+          return 0;
+      }
         return 0;
-    };
+      };
 
     $scope.invert = function(type, input_type, output_type, input_quantity) {
         var temp = input_type;
         input_type = output_type;
         output_type = temp;
 
-        var second = $scope.from; 
+        var second = $scope.from;
         $scope.from = $scope.to;
         $scope.to = second;
 
         $scope.convert(type, input_type, output_type, input_quantity);
 
-    }
-
+      };
 
     $scope.areaConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Square Mile":
-                var cms = squaremilesToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+        case 'Square Mile':
+          var cms = squaremilesToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Yard":
+        case 'Square Yard':
 
-                var cms = squareyardsToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squareyardsToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Foot":
+        case 'Square Foot':
 
-                var cms = squarefeetToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squarefeetToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Inch":
+        case 'Square Inch':
 
-                var cms = squareinchesToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squareinchesToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Hectarea":
+        case 'Hectarea':
 
-                var cms = hectareasToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = hectareasToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Acre":
+        case 'Acre':
 
-                var cms = acresToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = acresToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Kilometer":
+        case 'Square Kilometer':
 
-                var cms = squarekilometersToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squarekilometersToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Meter":
+        case 'Square Meter':
 
-                var cms = squaremetersToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squaremetersToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Centimeter":
+        case 'Square Centimeter':
 
-                var cms = squarecmsToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squarecmsToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            case "Square Millimeter":
+        case 'Square Millimeter':
 
-                var cms = squaremilimetersToCms(magnitud);
-                return revertFromSquareCms(cms, to);
+          var cms = squaremilimetersToCms(magnitud);
+          return revertFromSquareCms(cms, to);
 
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromSquareCms(cms, to) {
-        switch (to) {
-            case "Square Mile":
-                return cmsToSquaremiles(cms);
-            case "Square Yard":
-                return cmsToSquareyards(cms);
-            case "Square Foot":
-                return cmsToSquarefeet(cms);
-            case "Square Inch":
-                return cmsToSquareinches(cms);
-            case "Hectarea":
-                return cmsToHectareas(cms);
-            case "Acre":
-                return cmsToAcres(cms);
-            case "Square Kilometer":
-                return cmsToSquarekilometers(cms);
-            case "Square Meter":
-                return cmsToSquaremeters(cms);
-            case "Square Centimeter":
-                return cms;
-            case "Square Millimeter":
-                return cmsToSquaremilimeters(cms);
-        }
+      switch (to) {
+      case 'Square Mile':
+        return cmsToSquaremiles(cms);
+      case 'Square Yard':
+        return cmsToSquareyards(cms);
+      case 'Square Foot':
+        return cmsToSquarefeet(cms);
+      case 'Square Inch':
+        return cmsToSquareinches(cms);
+      case 'Hectarea':
+        return cmsToHectareas(cms);
+      case 'Acre':
+        return cmsToAcres(cms);
+      case 'Square Kilometer':
+        return cmsToSquarekilometers(cms);
+      case 'Square Meter':
+        return cmsToSquaremeters(cms);
+      case 'Square Centimeter':
+        return cms;
+      case 'Square Millimeter':
+        return cmsToSquaremilimeters(cms);
+    }
     }
 
     $scope.computerStorageConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Bit":
+        case 'Bit':
 
-                var bits = bitsToBits(magnitud);
-                return revertFromBits(bits, to);
+          var bits = bitsToBits(magnitud);
+          return revertFromBits(bits, to);
 
-            case "Byte":
+        case 'Byte':
 
-                var bits = bytesToBits(magnitud);
-                return revertFromBits(bits, to);
+          var bits = bytesToBits(magnitud);
+          return revertFromBits(bits, to);
 
-            case "Kilobyte":
+        case 'Kilobyte':
 
-                var bits = kilobytesToBits(magnitud);
-                return revertFromBits(bits, to);
+          var bits = kilobytesToBits(magnitud);
+          return revertFromBits(bits, to);
 
-            case "Megabyte":
+        case 'Megabyte':
 
-                var bits = megabytesToBits(magnitud);
-                return revertFromBits(bits, to);
+          var bits = megabytesToBits(magnitud);
+          return revertFromBits(bits, to);
 
-            case "Gigabyte":
+        case 'Gigabyte':
 
-                var bits = gigabytesToBits(magnitud);
-                return revertFromBits(bits, to);
+          var bits = gigabytesToBits(magnitud);
+          return revertFromBits(bits, to);
 
-            case "Terabyte":
+        case 'Terabyte':
 
-                var bits = terabytesToBits(magnitud);
-                return revertFromBits(bits, to);
+          var bits = terabytesToBits(magnitud);
+          return revertFromBits(bits, to);
 
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromBits(bits, to) {
-        switch (to) {
-            case "Bit":
-                return bits;
-            case "Byte":
-                return bitsToBytes(bits);
-            case "Kilobyte":
-                return bitsToKilobytes(bits);
-            case "Megabyte":
-                return bitsToMegabytes(bits);
-            case "Gigabyte":
-                return bitsToGigabytes(bits);
-            case "Terabyte":
-                return bitsToTerabytes(bits);
-        }
+      switch (to) {
+      case 'Bit':
+        return bits;
+      case 'Byte':
+        return bitsToBytes(bits);
+      case 'Kilobyte':
+        return bitsToKilobytes(bits);
+      case 'Megabyte':
+        return bitsToMegabytes(bits);
+      case 'Gigabyte':
+        return bitsToGigabytes(bits);
+      case 'Terabyte':
+        return bitsToTerabytes(bits);
+    }
     }
 
     $scope.energyConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "BTU":
+        case 'BTU':
 
-                var calories = btusTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = btusTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Calorie":
+        case 'Calorie':
 
-                var calories = caloriesTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = caloriesTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Erg":
+        case 'Erg':
 
-                var calories = ergsTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = ergsTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Foot-Pound":
+        case 'Foot-Pound':
 
-                var calories = footPoundsTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = footPoundsTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Joule":
+        case 'Joule':
 
-                var calories = joulesTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = joulesTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Kilogram-Calorie":
+        case 'Kilogram-Calorie':
 
-                var calories = kilogramCaloriesTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = kilogramCaloriesTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Kilogram-Meter":
+        case 'Kilogram-Meter':
 
-                var calories = kilogramMetersTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = kilogramMetersTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Kilowatt-Hour":
+        case 'Kilowatt-Hour':
 
-                var calories = kilowattHoursTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = kilowattHoursTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Newton-Meter":
+        case 'Newton-Meter':
 
-                var calories = newtonMetersTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = newtonMetersTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            case "Watt-Hour":
+        case 'Watt-Hour':
 
-                var calories = wattHoursTocalories(magnitud);
-                return revertFromCalories(calories, to);
+          var calories = wattHoursTocalories(magnitud);
+          return revertFromCalories(calories, to);
 
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromCalories(calories, to) {
-        switch (to) {
-            case "Calorie":
-                return calories;
-            case "BTU":
-                return caloriesToBtus(calories);
-            case "Erg":
-                return caloriesToErgs(calories);
-            case "Foot-Pound":
-                return caloriesToFootPounds(calories);
-            case "Joule":
-                return caloriesToJoules(calories);
-            case "Kilogram-Calorie":
-                return caloriesToKilogramCalories(calories);
-            case "Kilogram-Meter":
-                return caloriesToKilogramMeters(calories);
-            case "Kilowatt-Hour":
-                return caloriesKToilowattHours(calories);
-            case "Newton-Meter":
-                return caloriesToNewtonMeters(calories);
-            case "Watt-Hour":
-                return caloriesToWattHours(calories);
-        }
+      switch (to) {
+      case 'Calorie':
+        return calories;
+      case 'BTU':
+        return caloriesToBtus(calories);
+      case 'Erg':
+        return caloriesToErgs(calories);
+      case 'Foot-Pound':
+        return caloriesToFootPounds(calories);
+      case 'Joule':
+        return caloriesToJoules(calories);
+      case 'Kilogram-Calorie':
+        return caloriesToKilogramCalories(calories);
+      case 'Kilogram-Meter':
+        return caloriesToKilogramMeters(calories);
+      case 'Kilowatt-Hour':
+        return caloriesKToilowattHours(calories);
+      case 'Newton-Meter':
+        return caloriesToNewtonMeters(calories);
+      case 'Watt-Hour':
+        return caloriesToWattHours(calories);
     }
-
+    }
 
     $scope.lengthConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Mile":
+        case 'Mile':
 
-                var centimeters = milesToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = milesToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            case "Yard":
+        case 'Yard':
 
-                var centimeters = yardsToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = yardsToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            case "Foot":
+        case 'Foot':
 
-                var centimeters = feetToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = feetToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            case "Inche":
+        case 'Inche':
 
-                var centimeters = inchesToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = inchesToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            case "Kilometer":
+        case 'Kilometer':
 
-                var centimeters = kilometersToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = kilometersToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            case "Meter":
+        case 'Meter':
 
-                var centimeters = metersToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = metersToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            case "Centimeter":
+        case 'Centimeter':
 
-                return revertFromCentimeters(magnitud, to);
+          return revertFromCentimeters(magnitud, to);
 
-            case "Millimeter":
+        case 'Millimeter':
 
-                var centimeters = mmToCm(magnitud);
-                return revertFromCentimeters(centimeters, to);
+          var centimeters = mmToCm(magnitud);
+          return revertFromCentimeters(centimeters, to);
 
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromCentimeters(centimeters, to) {
-        switch (to) {
-            case "Mile":
-                return cmToMiles(centimeters);
-            case "Yard":
-                return cmToYards(centimeters);
-            case "Foot":
-                return cmToFeet(centimeters);
-            case "Inch":
-                return cmToInches(centimeters);
-            case "Kilometer":
-                return cmToKilometers(centimeters);
-            case "Meter":
-                return cmToMeters(centimeters);
-            case "Centimeter":
-                return centimeters;
-            case "Millimeter":
-                return cmToMm(centimeters);
-        }
+      switch (to) {
+      case 'Mile':
+        return cmToMiles(centimeters);
+      case 'Yard':
+        return cmToYards(centimeters);
+      case 'Foot':
+        return cmToFeet(centimeters);
+      case 'Inch':
+        return cmToInches(centimeters);
+      case 'Kilometer':
+        return cmToKilometers(centimeters);
+      case 'Meter':
+        return cmToMeters(centimeters);
+      case 'Centimeter':
+        return centimeters;
+      case 'Millimeter':
+        return cmToMm(centimeters);
+    }
     }
 
     $scope.weightConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Short Ton (US)":
+        case 'Short Ton (US)':
 
-                var grams = shortTonstoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = shortTonstoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            case "Pound (US)":
+        case 'Pound (US)':
 
-                var grams = poundstoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = poundstoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            case "Ounce (US)":
+        case 'Ounce (US)':
 
-                var grams = ouncetoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = ouncetoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            case "Stone":
+        case 'Stone':
 
-                var grams = stonetoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = stonetoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            case "Long Ton (UK)":
+        case 'Long Ton (UK)':
 
-                var grams = longTontoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = longTontoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            case "Metric Ton":
+        case 'Metric Ton':
 
-                var grams = metricTontoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = metricTontoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            case "Kilogram":
-                var grams = kilogramtoGrams(magnitud);
-                return revertFromGrams(magnitud, to);
+        case 'Kilogram':
+          var grams = kilogramtoGrams(magnitud);
+          return revertFromGrams(magnitud, to);
 
-            case "Gram":
+        case 'Gram':
 
-                var grams = gramstoGrams(magnitud);
-                return revertFromGrams(grams, to);
+          var grams = gramstoGrams(magnitud);
+          return revertFromGrams(grams, to);
 
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromGrams(grams, to) {
-        switch (to) {
-            case "Short Ton (US)":
-                return gramsToShortTons(grams);
-            case "Pound (US)":
-                return gramsToPounds(grams);
-            case "Ounce (US)":
-                return gramsToOunce(grams);
-            case "Stone":
-                return gramsToStone(grams);
-            case "Long Ton (UK)":
-                return gramsToLongTon(grams);
-            case "Metric Ton":
-                return gramsToMetricTon(grams);
-            case "Kilogram":
-                return gramsToKilogram(grams);
-            case "Gram":
-                return grams;
-        }
+      switch (to) {
+      case 'Short Ton (US)':
+        return gramsToShortTons(grams);
+      case 'Pound (US)':
+        return gramsToPounds(grams);
+      case 'Ounce (US)':
+        return gramsToOunce(grams);
+      case 'Stone':
+        return gramsToStone(grams);
+      case 'Long Ton (UK)':
+        return gramsToLongTon(grams);
+      case 'Metric Ton':
+        return gramsToMetricTon(grams);
+      case 'Kilogram':
+        return gramsToKilogram(grams);
+      case 'Gram':
+        return grams;
+    }
     }
 
     $scope.speedConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Knots":
+        case 'Knots':
 
-                var metersPerSecond = knotsToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(metersPerSecond, to);
+          var metersPerSecond = knotsToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
+        case 'Miles/Hour':
 
-            case "Miles/Hour":
+          var metersPerSecond = milesPerHourToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
-                var metersPerSecond = milesPerHourToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(metersPerSecond, to);
+        case 'Miles/Minute':
 
+          var metersPerSecond = milesPerMinuteToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
-            case "Miles/Minute":
+        case 'Feet/Minute':
 
-                var metersPerSecond = milesPerMinuteToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(metersPerSecond, to);
+          var metersPerSecond = feetPerMinuteToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
+        case 'Feet/Second':
 
-            case "Feet/Minute":
+          var metersPerSecond = feetPerSecondToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
-                var metersPerSecond = feetPerMinuteToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(metersPerSecond, to);
+        case 'Kilometers/Hour':
 
+          var metersPerSecond = kilometersPerHourToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
-            case "Feet/Second":
+        case 'Kilometers/Minute':
+          var metersPerSecond = kilometersPerMinuteToMeterPerSecond(magnitud, to);
+          return revertFromMeterPerSecond(metersPerSecond, to);
 
-                var metersPerSecond = feetPerSecondToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(metersPerSecond, to);
+        case 'Meters/Second':
 
+          var metersPerSecond = metersPerSecondToMeterPerSecond(magnitud);
+          return revertFromMeterPerSecond(grams, to);
 
-            case "Kilometers/Hour":
-
-                var metersPerSecond = kilometersPerHourToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(metersPerSecond, to);
-
-
-            case "Kilometers/Minute":
-                var metersPerSecond = kilometersPerMinuteToMeterPerSecond(magnitud, to);
-                return revertFromMeterPerSecond(metersPerSecond, to);
-
-
-            case "Meters/Second":
-
-                var metersPerSecond = metersPerSecondToMeterPerSecond(magnitud);
-                return revertFromMeterPerSecond(grams, to);
-
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromMeterPerSecond(metersPerSecond, to) {
-        switch (to) {
-            case "Knots":
-                return meterPerSecondKnots(metersPerSecond);
-            case "Miles/Hour":
-                return meterPerSecondMilesPerHour(metersPerSecond);
-            case "Miles/Minute":
-                return meterPerSecondMilesPerMinute(metersPerSecond);
-            case "Feet/Minute":
-                return meterPerSecondFeetPerMinutes(metersPerSecond);
-            case "Feet/Second":
-                return meterPerSecondFeetPerSecond(metersPerSecond);
-            case "Kilometers/Hour":
-                return meterPerSecondToKilometersPerHour(metersPerSecond);
-            case "Kilometers/Minute":
-                return meterPerSecondToKilometersPerMinute(metersPerSecond);
-            case "Meters/Second":
-                return metersPerSecond;
-        }
+      switch (to) {
+      case 'Knots':
+        return meterPerSecondKnots(metersPerSecond);
+      case 'Miles/Hour':
+        return meterPerSecondMilesPerHour(metersPerSecond);
+      case 'Miles/Minute':
+        return meterPerSecondMilesPerMinute(metersPerSecond);
+      case 'Feet/Minute':
+        return meterPerSecondFeetPerMinutes(metersPerSecond);
+      case 'Feet/Second':
+        return meterPerSecondFeetPerSecond(metersPerSecond);
+      case 'Kilometers/Hour':
+        return meterPerSecondToKilometersPerHour(metersPerSecond);
+      case 'Kilometers/Minute':
+        return meterPerSecondToKilometersPerMinute(metersPerSecond);
+      case 'Meters/Second':
+        return metersPerSecond;
+    }
     }
 
     $scope.temperatureConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Celsius":
+        case 'Celsius':
 
-                switch (to) {
-                    case "Fahrenheit":
-                        return celciusToFarenheit(magnitud);
-                    case "Kelvin":
-                        return celciusToKelvin(magnitud);
-                }
-
-            case "Fahrenheit":
-
-                switch (to) {
-                    case "Celsius":
-                        return farenheitToCelcius(magnitud);
-                    case "Kelvin":
-                        return farenheitToKelvin(magnitud);
-                }
-
-            case "Kelvin":
-
-                switch (to) {
-                    case "Celsius":
-                        return kelvinToCelsius(magnitud);
-                    case "Fahrenheit":
-                        return kelvinToFarenheit(magnitud);
-                }
-
-            default:
-                return 0;
-
+          switch (to) {
+          case 'Fahrenheit':
+            return celciusToFarenheit(magnitud);
+          case 'Kelvin':
+            return celciusToKelvin(magnitud);
         }
 
+        case 'Fahrenheit':
+
+          switch (to) {
+          case 'Celsius':
+            return farenheitToCelcius(magnitud);
+          case 'Kelvin':
+            return farenheitToKelvin(magnitud);
+        }
+
+        case 'Kelvin':
+
+          switch (to) {
+          case 'Celsius':
+            return kelvinToCelsius(magnitud);
+          case 'Fahrenheit':
+            return kelvinToFarenheit(magnitud);
+        }
+
+        default:
+          return 0;
+
+      }
+
         return 0;
-    }
+      };
 
     $scope.timeConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Years":
+        case 'Years':
 
-                var nanoseconds = yearsToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
+          var nanoseconds = yearsToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
+        case 'Weeks':
 
-            case "Weeks":
+          var nanoseconds = weeksToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
-                var nanoseconds = weeksToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
+        case 'Days':
 
+          var nanoseconds = daysToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
-            case "Days":
+        case 'Hours':
 
-                var nanoseconds = daysToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
+          var nanoseconds = hoursToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
+        case 'Minutes':
 
-            case "Hours":
+          var nanoseconds = minutesToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
-                var nanoseconds = hoursToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
+        case 'Seconds':
+          var nanoseconds = secondsToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
+        case 'Milliseconds':
+          var nanoseconds = millisecondsToNanoseconds(magnitud, to);
+          return revertFromNanoSeconds(nanoseconds, to);
 
-            case "Minutes":
+        case 'Microseconds':
+          var nanoseconds = microsecondsToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
-                var nanoseconds = minutesToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
+        case 'Nanoseconds':
 
+          var nanoseconds = nanosecondsToNanoseconds(magnitud);
+          return revertFromNanoSeconds(nanoseconds, to);
 
-            case "Seconds":
-                var nanoseconds = secondsToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
-
-
-            case "Milliseconds":
-                var nanoseconds = millisecondsToNanoseconds(magnitud, to);
-                return revertFromNanoSeconds(nanoseconds, to);
-
-
-            case "Microseconds":
-                var nanoseconds = microsecondsToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
-
-            case "Nanoseconds":
-
-                var nanoseconds = nanosecondsToNanoseconds(magnitud);
-                return revertFromNanoSeconds(nanoseconds, to);
-
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromNanoSeconds(nanoseconds, to) {
-        switch (to) {
-            case "Years":
-                return nanosecondsToYears(nanoseconds);
-            case "Weeks":
-                return nanosecondsToWeeks(nanoseconds);
-            case "Days":
-                return nanosecondsToDays(nanoseconds);
-            case "Hours":
-                return nanosecondsToHours(nanoseconds);
-            case "Minutes":
-                return nanosecondsToMinutes(nanoseconds);
-            case "Seconds":
-                return nanosecondsToSeconds(nanoseconds);
-            case "Milliseconds":
-                return nanosecondsToMilliseconds(nanoseconds);
-            case "Microseconds":
-                return nanosecondsToMicroseconds(nanoseconds);
-            case "Nanoseconds":
-                return nanoseconds;
+      switch (to) {
+      case 'Years':
+        return nanosecondsToYears(nanoseconds);
+      case 'Weeks':
+        return nanosecondsToWeeks(nanoseconds);
+      case 'Days':
+        return nanosecondsToDays(nanoseconds);
+      case 'Hours':
+        return nanosecondsToHours(nanoseconds);
+      case 'Minutes':
+        return nanosecondsToMinutes(nanoseconds);
+      case 'Seconds':
+        return nanosecondsToSeconds(nanoseconds);
+      case 'Milliseconds':
+        return nanosecondsToMilliseconds(nanoseconds);
+      case 'Microseconds':
+        return nanosecondsToMicroseconds(nanoseconds);
+      case 'Nanoseconds':
+        return nanoseconds;
 
-        }
+    }
     }
 
     $scope.volumeConvert = function(from, to, magnitud) {
 
         switch (from) {
 
-            case "Cubic Feet":
-                var mililiters = cubicFeetToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Cubic Feet':
+          var mililiters = cubicFeetToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Gallon (Imperial)":
-                var mililiters = gallonImperialToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Gallon (Imperial)':
+          var mililiters = gallonImperialToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Gallon (US)":
-                var mililiters = gallonUSToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Gallon (US)':
+          var mililiters = gallonUSToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Quart (US)":
+        case 'Quart (US)':
 
-                var mililiters = quartUSToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+          var mililiters = quartUSToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Pint (US)":
+        case 'Pint (US)':
 
-                var mililiters = pintUSToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+          var mililiters = pintUSToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Fluid Ounce (US)":
-                var mililiters = fluidOunceUSToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Fluid Ounce (US)':
+          var mililiters = fluidOunceUSToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Cup":
-                var mililiters = cupToMililiters(magnitud, to);
-                return revertFromMililiters(mililiters, to);
+        case 'Cup':
+          var mililiters = cupToMililiters(magnitud, to);
+          return revertFromMililiters(mililiters, to);
 
-            case "Tablespoon":
-                var mililiters = tableSpoonToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Tablespoon':
+          var mililiters = tableSpoonToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Dram (US)":
-                var mililiters = dramUSToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Dram (US)':
+          var mililiters = dramUSToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Cubic Centimeter":
-                var mililiters = cubicCentimeterToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Cubic Centimeter':
+          var mililiters = cubicCentimeterToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Cubic Meter":
-                var mililiters = cubicMeterToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Cubic Meter':
+          var mililiters = cubicMeterToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Liter":
-                var mililiters = literToMililiters(magnitud);
-                return revertFromMililiters(mililiters, to);
+        case 'Liter':
+          var mililiters = literToMililiters(magnitud);
+          return revertFromMililiters(mililiters, to);
 
-            case "Mililiter":
-                return revertFromMililiters(magnitud, to);
+        case 'Mililiter':
+          return revertFromMililiters(magnitud, to);
 
-            default:
-                return 0;
-        }
+        default:
+          return 0;
+      }
 
         return 0;
-    }
+      };
 
     function revertFromMililiters(mililiters, to) {
-        switch (to) {
-            case "Cubic Feet":
-                return mililitersToCubicFeet(mililiters);
-            case "Gallon (Imperial)":
-                return mililitersToGallonImperial(mililiters);
-            case "Gallon (US)":
-                return mililitersToGallonUS(mililiters);
-            case "Quart (US)":
-                return mililitersToQuartUS(mililiters);
-            case "Pint (US)":
-                return mililitersToPintUS(mililiters);
-            case "Fluid Ounce (US)":
-                return mililitersToFluidOunceUS(mililiters);
-            case "Cup":
-                return mililitersToCup(mililiters);
-            case "Tablespoon":
-                return mililitersToTablespoon(mililiters);
-            case "Dram (US)":
-                return mililitersToDramUS(mililiters);
-            case "Cubic Centimeter":
-                return mililitersToCubicCentimeter(mililiters);
-            case "Cubic Meter":
-                return mililitersToCubicMeter(mililiters);
-            case "Liter":
-                return MililitersToLiter(mililiters);
-            case "Mililiter":
-                return mililiters;
+      switch (to) {
+      case 'Cubic Feet':
+        return mililitersToCubicFeet(mililiters);
+      case 'Gallon (Imperial)':
+        return mililitersToGallonImperial(mililiters);
+      case 'Gallon (US)':
+        return mililitersToGallonUS(mililiters);
+      case 'Quart (US)':
+        return mililitersToQuartUS(mililiters);
+      case 'Pint (US)':
+        return mililitersToPintUS(mililiters);
+      case 'Fluid Ounce (US)':
+        return mililitersToFluidOunceUS(mililiters);
+      case 'Cup':
+        return mililitersToCup(mililiters);
+      case 'Tablespoon':
+        return mililitersToTablespoon(mililiters);
+      case 'Dram (US)':
+        return mililitersToDramUS(mililiters);
+      case 'Cubic Centimeter':
+        return mililitersToCubicCentimeter(mililiters);
+      case 'Cubic Meter':
+        return mililitersToCubicMeter(mililiters);
+      case 'Liter':
+        return MililitersToLiter(mililiters);
+      case 'Mililiter':
+        return mililiters;
 
-        }
+    }
     }
 
-
-});
+  });
 
 app.directive('validNumber', function() {
     return {
         require: '?ngModel',
         link: function(scope, element, attrs, ngModelCtrl) {
             if (!ngModelCtrl) {
-                return;
+              return;
             }
 
             ngModelCtrl.$parsers.push(function(val) {
                 if (angular.isUndefined(val)) {
-                    var val = '';
+                  var val = '';
                 }
 
                 var clean = val.replace(/[^-0-9\.]/g, '');
                 var negativeCheck = clean.split('-');
                 var decimalCheck = clean.split('.');
                 if (!angular.isUndefined(negativeCheck[1])) {
-                    negativeCheck[1] = negativeCheck[1].slice(0, negativeCheck[1].length);
-                    clean = negativeCheck[0] + '-' + negativeCheck[1];
-                    if (negativeCheck[0].length > 0) {
-                        clean = negativeCheck[0];
-                    }
+                  negativeCheck[1] = negativeCheck[1].slice(0, negativeCheck[1].length);
+                  clean = negativeCheck[0] + '-' + negativeCheck[1];
+                  if (negativeCheck[0].length > 0) {
+                    clean = negativeCheck[0];
+                  }
 
                 }
 
                 if (!angular.isUndefined(decimalCheck[1])) {
-                    decimalCheck[1] = decimalCheck[1].slice(0, 5);
-                    clean = decimalCheck[0] + '.' + decimalCheck[1];
+                  decimalCheck[1] = decimalCheck[1].slice(0, 5);
+                  clean = decimalCheck[0] + '.' + decimalCheck[1];
                 }
 
                 if (val !== clean) {
-                    ngModelCtrl.$setViewValue(clean);
-                    ngModelCtrl.$render();
+                  ngModelCtrl.$setViewValue(clean);
+                  ngModelCtrl.$render();
                 }
                 return clean;
-            });
+              });
 
             element.bind('keypress', function(event) {
                 if (event.keyCode === 32) {
-                    event.preventDefault();
+                  event.preventDefault();
                 }
-            });
-        }
-    };
-});
+              });
+          }
+      };
+  });
