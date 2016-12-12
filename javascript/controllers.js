@@ -7,25 +7,39 @@ app.controller('MainCtrl', function($scope) {
 
     $scope.type = 'none';
 
-    $scope.typeArray = ['Area', 'Computer Storage', 'Energy', 'Length', 'Speed', 'Temperature', 'Time', 'Volume', 'Weight'];
+    $scope.typeArray = ['Area', 'Computer Storage', 'Energy', 'Length', 'Speed',
+                       'Temperature', 'Time', 'Volume', 'Weight'];
 
-    $scope.areaArray = ['Square Mile', 'Square Yard', 'Square Foot', 'Square Inch', 'Hectarea', 'Acre', 'Square Kilometer', 'Square Meter', 'Square Centimeter', 'Square Millimeter'];
+    $scope.areaArray = ['Square Mile', 'Square Yard', 'Square Foot',
+                      'Square Inch', 'Hectarea', 'Acre', 'Square Kilometer',
+                      'Square Meter', 'Square Centimeter', 'Square Millimeter'];
 
-    $scope.computerStorageArray = ['Bit', 'Byte', 'Kilobyte', 'Megabyte', 'Gigabyte', 'Terabyte'];
+    $scope.computerStorageArray = ['Bit', 'Byte', 'Kilobyte', 'Megabyte',
+                                  'Gigabyte', 'Terabyte'];
 
-    $scope.energyArray = ['BTU', 'Calorie', 'Erg', 'Foot-Pound', 'Joule', 'Kilogram-Calorie', 'Kilogram-Meter', 'Kilowatt-Hour', 'Newton-Meter', 'Watt-Hour'];
+    $scope.energyArray = ['BTU', 'Calorie', 'Erg', 'Foot-Pound', 'Joule',
+                         'Kilogram-Calorie', 'Kilogram-Meter', 'Kilowatt-Hour', 
+                         'Newton-Meter', 'Watt-Hour'];
 
-    $scope.lengthArray = ['Mile', 'Yard', 'Foot', 'Inche', 'Kilometer', 'Meter', 'Centimeter', 'Millimeter'];
+    $scope.lengthArray = ['Mile', 'Yard', 'Foot', 'Inche', 'Kilometer', 'Meter',
+                         'Centimeter', 'Millimeter'];
 
-    $scope.weightArray = ['Short Ton (US)', 'Pound (US)', 'Ounce (US)', 'Stone', 'Long Ton (UK)', 'Metric Ton', 'Kilogram', 'Gram'];
+    $scope.weightArray = ['Short Ton (US)', 'Pound (US)', 'Ounce (US)', 'Stone',
+                         'Long Ton (UK)', 'Metric Ton', 'Kilogram', 'Gram'];
 
-    $scope.speedArray = ['Knots', 'Miles/Hour', 'Miles/Minute', 'Feet/Minute', 'Feet/Second', 'Kilometers/Hour', 'Kilometers/Minute', 'Meters/Second'];
+    $scope.speedArray = ['Knots', 'Miles/Hour', 'Miles/Minute', 'Feet/Minute',
+                        'Feet/Second', 'Kilometers/Hour', 'Kilometers/Minute',
+                        'Meters/Second'];
 
     $scope.temperatureArray = ['Celsius', 'Fahrenheit', 'Kelvin'];
 
-    $scope.timeArray = ['Years', 'Weeks', 'Days', 'Hours', 'Minutes', 'Seconds', 'Milliseconds', 'Microseconds', 'Nanoseconds'];
+    $scope.timeArray = ['Years', 'Weeks', 'Days', 'Hours', 'Minutes', 'Seconds',
+                       'Milliseconds', 'Microseconds', 'Nanoseconds'];
 
-    $scope.volumeArray = ['Cubic Feet', 'Gallon (Imperial)', 'Gallon (US)', 'Quart (US)', 'Pint (US)', 'Fluid Ounce (US)', 'Cup', 'Tablespoon', 'Dram (US)', 'Cubic Centimeter', 'Cubic Meter', 'Liter', 'Mililiter'];
+    $scope.volumeArray = ['Cubic Feet', 'Gallon (Imperial)', 'Gallon (US)',
+                          'Quart (US)', 'Pint (US)', 'Fluid Ounce (US)', 'Cup',
+                          'Tablespoon', 'Dram (US)', 'Cubic Centimeter',
+                          'Cubic Meter', 'Liter', 'Mililiter'];
 
     $scope.convert = function(type, inputType, outputType, inputQuantity) {
 
@@ -756,7 +770,8 @@ app.directive('validNumber', function() {
                 var negativeCheck = clean.split('-');
                 var decimalCheck = clean.split('.');
                 if (!angular.isUndefined(negativeCheck[1])) {
-                  negativeCheck[1] = negativeCheck[1].slice(0, negativeCheck[1].length);
+                  negativeCheck[1] = negativeCheck[1].
+                                     slice(0, negativeCheck[1].length);
                   clean = negativeCheck[0] + '-' + negativeCheck[1];
                   if (negativeCheck[0].length > 0) {
                     clean = negativeCheck[0];
