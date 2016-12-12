@@ -24,12 +24,6 @@
 
 //––––––––––––––––––––––––––  toCMs Functions  ––––––––––––––––––––––––––
 
-/**
- * squaremilimetersToCms - converts squaremilimeters to centimeters
- *
- * @param  {Number} milimeters - takes in milimiters
- * @return {Number}            - returns centimeters
- */
 function squaremilimetersToCms(milimeters) {
   return milimeters * 0.01;
 }
